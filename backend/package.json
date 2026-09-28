@@ -1,0 +1,38 @@
+{
+  "name": "ai-ride-matcher-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Ride Matcher backend — Express + TypeScript API with TypeSafe/Jev ride-matching decisions",
+  "main": "dist/server.js",
+"scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit",
+    "typecheck:test": "tsc -p tsconfig.test.json",
+    "test": "MONGODB_URI=mongodb://127.0.0.1:27017/ai_ride_matcher_test node --import tsx --test --test-concurrency=1 \"tests/**/*.test.ts\"",
+    "seed": "tsx src/scripts/seed.ts",
+    "seed:reset": "tsx src/scripts/seed.ts --reset"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.7.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
